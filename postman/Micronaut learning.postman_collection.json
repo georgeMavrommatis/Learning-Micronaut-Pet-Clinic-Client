@@ -1,0 +1,3489 @@
+{
+	"info": {
+		"_postman_id": "e3064c1d-6a50-400e-b3c1-344b4784f7b1",
+		"name": "Micronaut learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11550685",
+		"_collection_link": "https://grey-comet-448886.postman.co/workspace/Generali~8cb4727b-c50c-4620-be93-298ac276c8f5/collection/11550685-e3064c1d-6a50-400e-b3c1-344b4784f7b1?action=share&source=collection_link&creator=11550685"
+	},
+	"item": [
+		{
+			"name": "0-http-bining",
+			"item": [
+				{
+					"name": "body",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"foo\": \"hello\",\r\n  \"bar\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/body",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"body"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cookie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cookie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cookie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-cookie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/get-cookie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"get-cookie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "header",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Custom-Header",
+								"value": "dummy-header",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/header",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"header"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "QueryValue",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Custom-Header",
+								"value": "dummy-header",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/query?param=dummy-param",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"query"
+							],
+							"query": [
+								{
+									"key": "param",
+									"value": "dummy-param"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PathVariable",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Custom-Header",
+								"value": "dummy-header",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/path/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"path",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "multipart form upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/gmavr/Documents/projects/micronaut/GitHub/Learning-Micronaut/micronaut-cli.yml"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RequestBean",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Filter-Type",
+								"value": "advanced",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/bean?search=micronaut",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"bean"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "micronaut"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1-lesson JPA",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Tenant-ID",
+										"value": "tenantB",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet",
+					"item": [
+						{
+							"name": "get vets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"ho\",\r\n  \"lastName\": \"hi\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet - Fail Rollback transaction",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"fail\",\r\n  \"lastName\": \"hi\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Mike\",\r\n  \"lastName\": \"Peterson\",\r\n  \"specialtyNames\": [\r\n    \"Radiology\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/Alice/Anderson",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Alice",
+										"Anderson"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/Mike/Peterson",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Mike",
+										"Peterson"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Specialty",
+					"item": [
+						{
+							"name": "get Specialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Nutritionist\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Toxicoogist\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty/Nutritionist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty",
+										"Nutritionist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty/Toxicoogist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty",
+										"Toxicoogist"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "2-lesson Thread-Selection",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Tenant-ID",
+										"value": "tenantB",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "3-jpa-criteria-api-explicit-queries",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Tenant-ID",
+										"value": "tenantB",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet",
+					"item": [
+						{
+							"name": "get vets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByLastNameAndSpecialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet/Clark/Cardiology,toxicology",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Clark",
+										"Cardiology,toxicology"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"hyy\",\r\n  \"lastName\": \"Clark\",\r\n  \"specialties\": [\r\n    \"Cardiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet - Fail Rollback transaction",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"fail\",\r\n  \"lastName\": \"hi\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Mike\",\r\n  \"lastName\": \"Peterson\",\r\n  \"specialtyNames\": [\r\n    \"Radiology\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/Alice/Anderson",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Alice",
+										"Anderson"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/Alice/Anderson",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Alice",
+										"Anderson"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Specialty",
+					"item": [
+						{
+							"name": "get Specialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Nutritionist\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Toxicoogist\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty/Nutritionist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty",
+										"Nutritionist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty/Toxicoogist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty",
+										"Toxicoogist"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "4-jpa-multiple-dbs",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Tenant-ID",
+										"value": "tenantB",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet",
+					"item": [
+						{
+							"name": "findByLastNameAndSpecialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet/Clark_pg2/Cardiology_pg2,toxicology_pg2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Clark_pg2",
+										"Cardiology_pg2,toxicology_pg2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Specialty",
+					"item": [
+						{
+							"name": "get Specialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "5-jpa-pagination",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details?page=00&size=500",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "00"
+										},
+										{
+											"key": "size",
+											"value": "500"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet",
+					"item": [
+						{
+							"name": "get vets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "6-jdbc",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details?page=0&size=10000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pet-clinic details Related",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/detailsRelated?page=00&size=10000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"detailsRelated"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "00"
+										},
+										{
+											"key": "size",
+											"value": "10000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pet-clinic details Joined",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/detailsJoined?page=00&size=10000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"detailsJoined"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "00"
+										},
+										{
+											"key": "size",
+											"value": "10000"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Specialty",
+					"item": [
+						{
+							"name": "get Specialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet",
+					"item": [
+						{
+							"name": "get vets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet Related",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"test_related\",\r\n  \"lastName\": \"related\",\r\n  \"specialties\": [\r\n    \"Radiology_new\",\r\n    \"Surgery_new\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/related",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"related"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet success",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"test_success\",\r\n  \"lastName\": \"test\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "7-mongo",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet-Review",
+					"item": [
+						{
+							"name": "get vet-review details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/details?page=0&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet-Review 1",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"reviewer\": \"Fred Doe\",\r\n  \"content\": \"Excellent Doctor, cured my Cat\",\r\n  \"rating\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet-Review 2",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"reviewer\": \"Peter Prince\",\r\n  \"content\": \"Excellent Doctor, cured my Dog\",\r\n  \"rating\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet-Review 3",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"reviewer\": \"Mike Peters\",\r\n  \"content\": \"Excellent Doctor, but too expensive\",\r\n  \"rating\": 4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet-Review-Fail",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"reviewer\": \"Mike berman\",\r\n  \"content\": \"Excellent Doctor, cured my Dog\",\r\n  \"rating\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Vet-Score",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/Alice/Anderson",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"Alice",
+										"Anderson"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Vet reviews above min rating",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/above-min-rating/Alice/Anderson?minRating=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"above-min-rating",
+										"Alice",
+										"Anderson"
+									],
+									"query": [
+										{
+											"key": "minRating",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "8-jpa-react",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details?page=0&size=178",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "178"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet",
+					"item": [
+						{
+							"name": "get vets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet?page=0&size=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByLastName and specialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet/Peterson JR/Pediatric Pathology,Pediatric Clinical Pathology,Advanced Oncology",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Peterson JR",
+										"Pediatric Pathology,Pediatric Clinical Pathology,Advanced Oncology"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Anderson\",\r\n  \"lastName\": \"hi\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Mike\",\r\n  \"lastName\": \"Peterson JR\",\r\n  \"specialties\": [\r\n    \"Radiology\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/Anderson/hi",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Anderson",
+										"hi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/Mike/Peterson JR",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Mike",
+										"Peterson JR"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Specialty",
+					"item": [
+						{
+							"name": "get Specialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"New Specialty temp\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Foobar NEW\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty/Dentistry",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty",
+										"Dentistry"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "9-r2dbc",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details?page=0&size=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet",
+					"item": [
+						{
+							"name": "get vets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet?page=0&size=1000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "1000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "findByLastName and specialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet/hi/Preventive Medicine,Pediatric Clinical Pathology,Radiology",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"hi",
+										"Preventive Medicine,Pediatric Clinical Pathology,Radiology"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"test_fail\",\r\n  \"lastName\": \"hi\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Mike\",\r\n  \"lastName\": \"Peterson JR\",\r\n  \"specialties\": [\r\n    \"Radiology\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/Anderson/hi",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Anderson",
+										"hi"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Vet",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Anderson\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet/Mike/Peterson JR",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet",
+										"Mike",
+										"Peterson JR"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Specialty",
+					"item": [
+						{
+							"name": "get Specialties",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"New Specialty temp\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update specialty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Foobar NEW\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/specialty/Dentistry",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"specialty",
+										"Dentistry"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "10-mongodb-react",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details?page=0&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet-Review",
+					"item": [
+						{
+							"name": "get vet-review details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/details?page=0&size=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet-Review-Fail",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Nicholas\",\r\n  \"lastName\": \"Robinson\",\r\n  \"reviewer\": \"Mike berman\",\r\n  \"content\": \"Excellent Doctor, cured my Dog\",\r\n  \"rating\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet-Review",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Nicholas\",\r\n  \"lastName\": \"Robinson\",\r\n  \"reviewer\": \"Fred Doe\",\r\n  \"content\": \"Excellent Doctor, cured my Cat\",\r\n  \"rating\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet-Review",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"David\",\r\n  \"lastName\": \"Lewis\",\r\n  \"reviewer\": \"Peter Prince\",\r\n  \"content\": \"Excellent Doctor, cured my Dog\",\r\n  \"rating\": 9\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet-Review",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"David\",\r\n  \"lastName\": \"Lewis\",\r\n  \"reviewer\": \"Peter Jones\",\r\n  \"content\": \"Excellent Doctor, cured my Dog\",\r\n  \"rating\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Vet-Score",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/David/Lewis",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"David",
+										"Lewis"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Vet-Score Multiplexed",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/findVetsScore?firstName=Nicholas&lastName=Robinson&firstName=David&lastName=Lewis",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"findVetsScore"
+									],
+									"query": [
+										{
+											"key": "firstName",
+											"value": "Nicholas"
+										},
+										{
+											"key": "lastName",
+											"value": "Robinson"
+										},
+										{
+											"key": "firstName",
+											"value": "David"
+										},
+										{
+											"key": "lastName",
+											"value": "Lewis"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet",
+					"item": [
+						{
+							"name": "save Vet fail",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"test_fail\",\r\n  \"lastName\": \"test\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save Vet success",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"test_success\",\r\n  \"lastName\": \"test\",\r\n  \"specialties\": [\r\n    \"Radiology\",\r\n    \"Surgery\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get vets",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet?page=0&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "11-reactive-streaming",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details?page=0&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet-Review",
+					"item": [
+						{
+							"name": "save N Vet-Review randomly",
+							"item": [
+								{
+									"name": "save N Vet-Review randomly",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"// 1) random rating 1–10\r",
+													"pm.variables.set(\"rating\", Math.floor(Math.random() * 10) + 1);\r",
+													"\r",
+													"// 2) random reviewer name\r",
+													"const reviewers = [\r",
+													"  \"Fred Doe\", \"Peter Prince\"\r",
+													"];\r",
+													"pm.variables.set(\r",
+													"  \"reviewer\",\r",
+													"  reviewers[Math.floor(Math.random() * reviewers.length)]\r",
+													");\r",
+													"\r",
+													"// 3) random review content\r",
+													"const contents = [\r",
+													"  \"Excellent doctor, cured my cat!\",\r",
+													"  \"Had to wait too long, but good care.\",\r",
+													"  \"Very friendly staff and great results.\",\r",
+													"  \"Not happy with the follow-up.\",\r",
+													"  \"Would 100% recommend to a friend.\"\r",
+													"];\r",
+													"pm.variables.set(\r",
+													"  \"content\",\r",
+													"  contents[Math.floor(Math.random() * contents.length)]\r",
+													");\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {},
+												"requests": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {},
+												"requests": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"firstName\": \"Nicholas\",\r\n  \"lastName\" : \"Robinson\",\r\n  \"reviewer\" : \"{{reviewer}}\",\r\n  \"content\"  : \"{{content}}\",\r\n  \"rating\"   : {{rating}}\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/vet-review",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"vet-review"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "get vet-review details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/reviewer-details?page=0&size=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"reviewer-details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get vet-review SSE stream",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": " ",
+										"type": "text"
+									},
+									{
+										"key": "X-Client-Id",
+										"value": "0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/reviewer-details/text-event-stream",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"reviewer-details",
+										"text-event-stream"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get vet-review batch JsonStream",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/x-json-stream",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/reviewer-details/json-stream?offset=0&limit=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"reviewer-details",
+										"json-stream"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "12-reactive-streaming-with-backpressure",
+			"item": [
+				{
+					"name": "PetClinic",
+					"item": [
+						{
+							"name": "get pet-clinic details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/pet-clinic/details?page=0&size=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"pet-clinic",
+										"details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vet-Review",
+					"item": [
+						{
+							"name": "save N Vet-Review randomly",
+							"item": [
+								{
+									"name": "save N Vet-Review randomly",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"// 1) random rating 1–10\r",
+													"pm.variables.set(\"rating\", Math.floor(Math.random() * 10) + 1);\r",
+													"\r",
+													"// 2) random reviewer name\r",
+													"const reviewers = [\r",
+													"  \"Fred Doe\", \"Peter Prince\"\r",
+													"];\r",
+													"pm.variables.set(\r",
+													"  \"reviewer\",\r",
+													"  reviewers[Math.floor(Math.random() * reviewers.length)]\r",
+													");\r",
+													"\r",
+													"// 3) random review content\r",
+													"const contents = [\r",
+													"  \"Excellent doctor, cured my cat!\",\r",
+													"  \"Had to wait too long, but good care.\",\r",
+													"  \"Very friendly staff and great results.\",\r",
+													"  \"Not happy with the follow-up.\",\r",
+													"  \"Would 100% recommend to a friend.\"\r",
+													"];\r",
+													"pm.variables.set(\r",
+													"  \"content\",\r",
+													"  contents[Math.floor(Math.random() * contents.length)]\r",
+													");\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {},
+												"requests": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {},
+												"requests": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"firstName\": \"Nicholas\",\r\n  \"lastName\" : \"Robinson\",\r\n  \"reviewer\" : \"{{reviewer}}\",\r\n  \"content\"  : \"{{content}}\",\r\n  \"rating\"   : {{rating}}\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/vet-review",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"vet-review"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "get vet-review details",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/reviewer-details?page=0&size=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"reviewer-details"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get vet-review SSE stream Copy 2",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/event-stream",
+										"type": "text"
+									},
+									{
+										"key": "X-Client-Id",
+										"value": "0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/reviewer-details/sse-stream/back-pressure/batch?offset=4&limit=100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"reviewer-details",
+										"sse-stream",
+										"back-pressure",
+										"batch"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "4"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get vet-review batch JsonStream",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/x-json-stream",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/vet-review/reviewer-details/json-stream/back-pressure/batch?offset=4&limit=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review",
+										"reviewer-details",
+										"json-stream",
+										"back-pressure",
+										"batch"
+									],
+									"query": [
+										{
+											"key": "offset",
+											"value": "4"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "13-restfull-microservices",
+			"item": [
+				{
+					"name": "save N Vet-Review randomly Copy",
+					"item": [
+						{
+							"name": "save N Vet-Review randomly",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"// 1) random rating 1–10\r",
+											"pm.variables.set(\"rating\", Math.floor(Math.random() * 10) + 1);\r",
+											"\r",
+											"// 2) random reviewer name\r",
+											"const reviewers = [\r",
+											"  \"Fred Doe\", \"Peter Prince\"\r",
+											"];\r",
+											"pm.variables.set(\r",
+											"  \"reviewer\",\r",
+											"  reviewers[Math.floor(Math.random() * reviewers.length)]\r",
+											");\r",
+											"\r",
+											"// 3) random review content\r",
+											"const contents = [\r",
+											"  \"Excellent doctor, cured my cat!\",\r",
+											"  \"Had to wait too long, but good care.\",\r",
+											"  \"Very friendly staff and great results.\",\r",
+											"  \"Not happy with the follow-up.\",\r",
+											"  \"Would 100% recommend to a friend.\"\r",
+											"];\r",
+											"pm.variables.set(\r",
+											"  \"content\",\r",
+											"  contents[Math.floor(Math.random() * contents.length)]\r",
+											");\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Nicholas\",\r\n  \"lastName\" : \"Robinson\",\r\n  \"reviewer\" : \"{{reviewer}}\",\r\n  \"content\"  : \"{{content}}\",\r\n  \"rating\"   : {{rating}}\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "save N Vet-Review randomly Copy",
+					"item": [
+						{
+							"name": "save N Vet-Review randomly",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"// 1) random rating 1–10\r",
+											"pm.variables.set(\"rating\", Math.floor(Math.random() * 10) + 1);\r",
+											"\r",
+											"// 2) random reviewer name\r",
+											"const reviewers = [\r",
+											"  \"Fred Doe\", \"Peter Prince\"\r",
+											"];\r",
+											"pm.variables.set(\r",
+											"  \"reviewer\",\r",
+											"  reviewers[Math.floor(Math.random() * reviewers.length)]\r",
+											");\r",
+											"\r",
+											"// 3) random review content\r",
+											"const contents = [\r",
+											"  \"Excellent doctor, cured my cat!\",\r",
+											"  \"Had to wait too long, but good care.\",\r",
+											"  \"Very friendly staff and great results.\",\r",
+											"  \"Not happy with the follow-up.\",\r",
+											"  \"Would 100% recommend to a friend.\"\r",
+											"];\r",
+											"pm.variables.set(\r",
+											"  \"content\",\r",
+											"  contents[Math.floor(Math.random() * contents.length)]\r",
+											");\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"Nicholas\",\r\n  \"lastName\" : \"Robinson\",\r\n  \"reviewer\" : \"{{reviewer}}\",\r\n  \"content\"  : \"{{content}}\",\r\n  \"rating\"   : {{rating}}\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/vet-review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vet-review"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get pet-clinic details",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "tenantB",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/pet-client/pet-clinic-details?page=2&size=15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pet-client",
+								"pet-clinic-details"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "size",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get pet-clinic details async",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "tenantB",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/pet-client/pet-clinic-details-async?page=0&size=150",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pet-client",
+								"pet-clinic-details-async"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "150"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get pet-clinic details low-level sync",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "tenantB",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/pet-client/pet-clinic-details-low-level-sync?page=0&size=15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pet-client",
+								"pet-clinic-details-low-level-sync"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get pet-clinic details low-level async",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "tenantB",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/pet-client/pet-clinic-details-low-level-async?page=0&size=15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"pet-client",
+								"pet-clinic-details-low-level-async"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get VetReviewDetails",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/vet-review/details?offset=0&limit=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vet-review",
+								"details"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get VetReviewDetails stream sse no headers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/event-stream",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/vet-review/details/stream/sse-no-headers?offset=0&limit=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vet-review",
+								"details",
+								"stream",
+								"sse-no-headers"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get VetReviewDetails stream sse with headers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/event-stream",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/vet-review/details/stream/sse-include-headers?offset=3&limit=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"vet-review",
+								"details",
+								"stream",
+								"sse-include-headers"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "3"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+micronaut:
+  application:
+    name: pet-client
+  server:
+    #our client application will run in separate port from our server.
+    port: 9090
+    thread-selection: AUTO
+  # with micronaut.http.services.<id-name>.url and micronaut.http.services.<id-name>.url we define the declarative client id
+  # for our declarative interfaces @Client(id = "<id-name>") that binds the HTTP call to the specific url and path.
+  http:
+    services:
+      petclinic:
+        url: "http://localhost:8080" #only for the scheme + host + port
+        path: "/pet-clinic" # If we need a context‑path, we must supply it via the separate path property.
+      vetreview:
+        url: "http://localhost:8080" #only for the scheme + host + port
+        path: "/vet-review" # If we need a context‑path, we must supply it via the separate path property.
+
+
